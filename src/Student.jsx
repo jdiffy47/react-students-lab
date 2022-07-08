@@ -1,14 +1,14 @@
-import { studentList } from "./data";
-import { useState } from "react";
+import Score from "./Score";
 
 
-const Student = () => {
-  const [index, setIndex] = useState(0)
-  let student = studentList[index]
+const Student = (props) => {
   return ( 
     <>
-      <h1>{student.name}</h1>
-      <p>{student.bio}</p>
+      <h3>{props.student.name}</h3>
+      <h4>{props.student.bio}</h4>
+      {props.student.scores.map((scoreData, idx) =>
+        <Score key={idx} scoreData={scoreData} />
+      )}
     </>
   )
 }
