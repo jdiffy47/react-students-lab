@@ -59,4 +59,6 @@ const studentList = [
   }
 ]
 
-export default studentList
+export {
+  studentList
+}
